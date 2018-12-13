@@ -48,6 +48,14 @@ public:
         m_Head = temp;
     }
 
+    inline void DeleteFirst()
+    {
+        Node<T>* temp = new Node<T>;
+        temp = m_Head;
+        m_Head = m_Head->GetNext();
+        delete temp;
+    }
+
     inline void Display()
     {
         Node<T>* temp = new Node<T>;
@@ -65,6 +73,8 @@ int main()
     LinkedList<int> ll (1984);
     ll.InsertAtBeginning(2002);
     ll.AddData(2018);
+    ll.Display();
+    ll.DeleteFirst();
     ll.Display();
     return 0;
 }
